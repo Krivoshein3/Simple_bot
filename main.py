@@ -11,16 +11,14 @@ week_now = ''
 
 
 def week_check():
-  global week_now
-  current_date = datetime.date.today()
-  september_1 = datetime.date(current_date.year, 9, 1)
-  days_passed = (current_date - september_1).days
-  week_number = (days_passed // 7) + 1
-  if week_number % 2 != 0:
-    week_now = "Нечетная"
-  else:
-    week_now = "Четная"
-  return week_now
+    current_date = datetime.date.today()
+    days_passed = (current_date - datetime.date(current_date.year, 1, 1)).days
+    week_number = (days_passed // 7) + 1
+    if week_number % 2 != 0:
+        week_now = "Нечетная"
+    else:
+        week_now = "Четная"  
+    return week_now
 
 
 
